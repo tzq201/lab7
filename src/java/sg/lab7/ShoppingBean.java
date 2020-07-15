@@ -1,15 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package sg.lab7;
+
+import java.io.Serializable;
 
 /**
  *
  * @author tzq20
  */
-public class ShoppingBean {
+public class ShoppingBean implements Serializable {
+    public static final long serialVersionUID = -1L;
+    private String id;
+    private String description;
     
+
+    public ShoppingBean() {
+    }
+
+    public String getID() {
+        return id;
+    }
+
+    public void setID(String ID) {
+        this.id = ID;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+ 
 }
