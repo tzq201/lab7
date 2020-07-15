@@ -1,34 +1,33 @@
 package sg.lab7;
 
-import java.io.Serializable;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author tzq20
  */
-public class ShoppingBean implements Serializable {
-    public static final long serialVersionUID = -1L;
-    private String id;
-    private String description;
+@Stateless
+public class ShoppingBean {
     
-
-    public ShoppingBean() {
+    public double computeBMI(double height, double weight) {
+        return (10000 / (height * height)) * weight;
     }
 
-    public String getID() {
-        return id;
+    public int getNameLength(String name) {
+        return name.length();
     }
 
-    public void setID(String ID) {
-        this.id = ID;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
- 
+    public int countVowels(String name) {
+        int noOfVowels = 0;
+        name = name.toLowerCase();
+        
+        for(int i = 0; i < name.length(); i++) {
+            char c = name.charAt(i);
+            if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+                ++noOfVowels;
+        }
+        
+        return noOfVowels;
+    }   
+    
 }
